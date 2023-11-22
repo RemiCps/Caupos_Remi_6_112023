@@ -1,0 +1,14 @@
+.Banner {
+    background: center;
+    min-height: 140px;
+    max-width: 100%;
+    padding-inline: 2rem;
+    background-image: url("../images/banner.png");   
+    display: grid;
+    place-items: center;
+    color: white;
+    margin: auto;
+    font-family: Montserrat;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
