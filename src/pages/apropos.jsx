@@ -1,9 +1,11 @@
-import Navbar from "../components/Navbar/Navbar";
+import Header from "../components/header/Header";
+import Footer from "../components/Footer/Footer";
 
 const About = () => {
     return (
         <div className="About">
-            <Navbar />
+            <Header />
+            <Footer />
         </div>
     )
 }

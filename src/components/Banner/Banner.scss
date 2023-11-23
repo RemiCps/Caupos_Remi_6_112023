@@ -1,3 +1,5 @@
+@use "src/scss/variables" as *;
+
 .Banner {
     background: center;
     min-height: 140px;
@@ -6,7 +8,7 @@
     background-image: url("../images/banner.png");   
     display: grid;
     place-items: center;
-    color: white;
+    color: $color-tertiaire;
     margin: auto;
     font-family: Montserrat;
     border-radius: 2rem;
