@@ -1,0 +1,81 @@
+@use "../../scss/variables.scss" as *;
+
+.logement {
+    color: $color-primary;
+    
+    h1 {
+        font-weight: 400;
+        margin-block: 0;
+    }
+
+    h2 {
+        margin-bottom: 0.2em;
+        font-size: 18px;
+    }
+    .Carrousel {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+    }
+    .logement_header {
+        display: flex; 
+        .logement_title {
+            flex-grow: 1;
+        }
+        .logement_owner_details {
+            display: flex;
+            gap: .5rem;
+        }
+        .badge {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: $grid-background;
+
+        }
+        .logement_owner_stars {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.2rem;
+            * {
+                font-size: 2rem;
+            }
+            .on {
+                color: $color-primary;
+            }
+            .off {
+                color: rgb(165, 164, 164);
+            }
+        }
+    }
+
+    h3 {
+        margin-block: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-weight: 400;
+    }
+
+    & .logement_tags {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+        gap: 1rem;
+        margin-bottom: 30px;
+        span{
+        background-color: $color-primary;
+        color: $color-tertiaire;
+        padding: 0.3em 1em;
+        border-radius: .7rem;
+        }
+    }
+    .apartment_description_area {
+        display: flex;
+        gap: 1rem;
+    }
+    
+}
+

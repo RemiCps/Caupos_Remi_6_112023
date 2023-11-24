@@ -1,8 +1,8 @@
 import './style/App.scss';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from "./pages/home"
-import About from './pages/apropos';
-import Lodge from './pages/logement';
+import About from './pages/apropos/apropos';
+import Lodge from './pages/logement/logement';
 import Error from './components/Error';
 
 function App() {
