@@ -2,12 +2,31 @@
 
 .logement_header {
     display: flex; 
+    margin-bottom: 2rem;
+    gap: 1rem;
+    @media screen and (width <= 753px) {
+        flex-direction: column;
+
+    }
     .logement_title {
         flex-grow: 1;
     }
+
+    .logement_owner {
+        display: flex;
+        flex-direction: column;
+        @media screen and (width <= 753px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
     .logement_owner_details {
         display: flex;
         gap: .5rem;
+        @media screen and (width <= 753px) {
+            order: 1; 
+        }
     }
     .badge img{
         height: 50px;

@@ -29,8 +29,15 @@ function ImageBanner(props) {
           <img key={pic} src={pic} alt='' className={getClassName(i)}></img>
           ))}
       </div>
-      <button className="btn btn-next" onClick={moveToNext}><i className='fas fa-chevron-left'></i></button>
-      <button className="btn btn-previous" onClick={moveToPrevious}><i className='fas fa-chevron-right'></i></button>
+      <button className="btn btn-previous" onClick={moveToPrevious}>
+        <i className='fas fa-chevron-left'></i>
+      </button>
+      <span className='slideCounter'>
+      {currentPicture + 1} / {pictures.length}
+      </span>
+      <button className="btn btn-next" onClick={moveToNext}>
+        <i className='fas fa-chevron-right'></i>
+      </button>
     </div>
   );
 }

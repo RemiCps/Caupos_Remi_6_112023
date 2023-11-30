@@ -14,11 +14,17 @@
         border-width: 0;
         cursor: pointer;
         &.btn-next {
-            left: 0;
-        }
-        &.btn-previous {
             right: 0;
         }
+        &.btn-previous {
+            left: 0;
+        }
+    }
+    .slideCounter {
+        position: absolute;
+        bottom: 1rem;
+        text-align: center;
+        color: $color-tertiaire;
     }
     .imageContainer {
         position: relative;

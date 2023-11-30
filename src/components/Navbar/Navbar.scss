@@ -4,6 +4,10 @@
     display: flex;
     gap: 57px;
     margin: 40px;
+    @media screen and (width <= 753px) {
+        text-transform: uppercase;
+        font-weight: 400;
+    }
     & a {
         font-family: Montserrat;
         color: $color-primary;
