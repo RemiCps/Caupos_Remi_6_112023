@@ -1,7 +1,9 @@
-@use "../../scss/variables.scss" as *;
+@use "../../../scss/variables.scss" as *;
 
 .logement_description {
     margin-bottom: 1rem;
+    flex-basis: 50%;
+    overflow: hidden;
     p {
         margin-block: 0;
     }
@@ -20,6 +22,16 @@
         background-color: $background-light;
         color: $color-primary;
         padding: 1rem;
-        border-radius: 0.7rem
+        border-radius: 0.7rem;
+        position: relative;
+        top: -0.3rem;
+        z-index: -1;
+        transition: transform 0.3s ease-in-out;
+        & hidden {
+            transform: translateY(-100%);
+        }
+        & visible {
+            transform: translateY(0);
+        }
     }
 }

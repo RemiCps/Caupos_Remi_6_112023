@@ -1,0 +1,40 @@
+@use "../../../scss/variables.scss" as *;
+
+.logement_header {
+    display: flex; 
+    .logement_title {
+        flex-grow: 1;
+    }
+    .logement_owner_details {
+        display: flex;
+        gap: .5rem;
+    }
+    .badge img{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: $grid-background;
+
+    }
+    .logement_owner_stars {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+        color: rgb(165, 164, 164);
+        * {
+            font-size: 2rem;
+        }
+        .on {
+            color: $color-primary;
+        }
+    }
+}
+
+h3 {
+    margin-block: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight: 400;
+}

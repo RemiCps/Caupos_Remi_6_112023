@@ -1,47 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
-import Carrousel from "../../components/images/Carrousel_img.png";
-import { DescriptionPanel } from "../../components/Apartment_description/Apartment_description"
+import ImageBanner from '../../components/Apartment/ApartmentBanner/ApartmentBanner';
+import { DescriptionPanel } from "../../components/Apartment/Apartment_description/Apartment_description"
 import "../logement/logement.scss"
+import { useLocation } from 'react-router-dom';
+import ApartmentHeader from '../../components/Apartment/ApartmentHeader/ApartmentHeader';
+
 
 function Lodge() {
+  const location = useLocation();
+  const [flat, setFlat] = useState(null);
+  useEffect(fetchApartmentData);
+
+function fetchApartmentData() {
+  fetch("logements.json")
+      .then((res) => res.json())
+      .then((flats) => {
+        const flat = flats.find((flat) => flat.id === location.state.apartmentId);
+        setFlat(flat);
+      })
+        .catch(console.error);
+}
+
+if (flat == null) return <div>Loading...</div>;
   return (
     <div className='logement'>
-      <Header />    
-        <div>
-          <img className="Carrousel" src={Carrousel} alt='carrousel' />
-        </div>
-        <div className='logement_header'>
-          <div className='logement_title'>
-            <h1>Cozy loft on the Canal Saint-Martin</h1>
-              <h2>Paris, Ile de France</h2>
-              <div className='logement_tags'>
-                <span>Cozy</span>
-                <span>Canal</span>
-                <span>Paris 10</span>
-              </div>
-          </div>  
-          <div className='logement_owner'>
-            <div className='logement_owner_details'>
-              <h3>
-                <span>Alexandre</span> 
-                <span>Dumas</span>
-              </h3>
-              <div className='badge'></div>
-            </div>
-            <div className='logement_owner_stars'>
-            <span className='on'>★</span>    
-            <span className='on'>★</span>    
-            <span className='on'>★</span>    
-            <span className='off'>★</span>    
-            <span className='off'>★</span> 
-            </div>   
-          </div>
-        </div> 
+      <Header />  
+        <ImageBanner pictures={flat.pictures}/>
+        <ApartmentHeader flat={flat}/>
         <div className='apartment_description_area'>
-          <DescriptionPanel />
-          <DescriptionPanel />
+          <DescriptionPanel title="Description" content={flat.description}/>
+          <DescriptionPanel 
+            title="Equipements" 
+            content={flat.equipments.map((eq, i) => (
+              <li key={i}>{eq}</li>
+            ))}
+          />
         </div>
       <Footer />
     </div>
